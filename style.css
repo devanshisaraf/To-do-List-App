@@ -1,0 +1,207 @@
+/* General reset and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  box-sizing: border-box;
+}
+
+/* Container settings */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(images/background.jpeg);
+  background-size: cover;
+  padding: 10px;
+}
+
+/* To-Do app settings */
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: rgba(38, 38, 38, 0.5);
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+/* Heading settings */
+.todo-app h2 {
+  color: #ece7e6;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-app h2 img {
+  width: 40px;
+  margin-left: 10px;
+}
+
+/* Category button settings */
+.categories {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.categories button {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.categories button.active,
+.categories button:hover {
+  background: #77815C;
+  color: rgb(38, 38, 38);
+}
+
+/* Input row settings */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+input, select {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 14px;
+}
+
+select {
+  margin-right: 10px;
+  color: #333;
+  border-radius: 5px;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: #77815C;
+  padding: 16px 50px;
+  color: rgb(38, 38, 38);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+/* Search container settings */
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+/* List item settings */
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  color: #ece7e6;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li.checked {
+  text-decoration: line-through;
+}
+
+/* Custom checkbox settings */
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-image: url(images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+ul li.checked::before {
+  background-image: url(images/checked.png);
+}
+
+/* Span settings for delete and edit buttons */
+ul li span {
+  display: none;
+}
+
+ul li:hover span {
+  display: inline-block;
+}
+
+.delete-btn,
+.edit-btn {
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets and larger devices */
+@media (min-width: 600px) {
+  .row {
+    justify-content: space-between;
+  }
+  
+  button {
+    width: auto;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 599px) {
+  .categories {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categories button {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0; /* Remove left padding */
+  }
+
+  #input-box,
+  #category-select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 20px; /* Add margin below the button */
+  }
+}
